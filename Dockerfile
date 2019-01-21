@@ -1,13 +1,12 @@
-FROM ubuntu:16.04
+FROM alpine:latest
 
 ENV COMMIT 4e4ab880fc0c884d39b966de7819eb81084752b5
 
 WORKDIR /opt
 
 RUN \
-  apt-get update && \
-  apt-get install -y \
-    curl unzip xtables-addons-common libtext-csv-xs-perl libnetaddr-ip-perl && \
+  apk add --no-cache --update \
+    bash curl perl perl-doc perl-netaddr-ip perl-text-csv_xs unzip xtables-addons && \
   curl -L \
     -o /tmp/GeoLite2xtables.zip \
     https://github.com/mschmitt/GeoLite2xtables/archive/${COMMIT}.zip && \
@@ -17,8 +16,6 @@ RUN \
     ./GeoLite2xtables-${COMMIT} ./GeoLite2xtables && \
   mkdir \
     /xt_build && \
-  rm -rf \
-    /var/lib/apt/lists/* && \
   rm \
     /tmp/GeoLite2xtables.zip
 
