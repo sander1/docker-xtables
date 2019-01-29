@@ -1,10 +1,14 @@
-FROM alpine:latest
+FROM alpine:3.8
 
 ENV COMMIT 4e4ab880fc0c884d39b966de7819eb81084752b5
 
 WORKDIR /opt
 
 RUN \
+  echo \
+    http://nl.alpinelinux.org/alpine/v3.8/main >> /etc/apk/repositories && \
+  echo \
+    http://nl.alpinelinux.org/alpine/v3.8/community >> /etc/apk/repositories && \
   apk add --no-cache --update \
     bash curl perl perl-doc perl-netaddr-ip perl-text-csv_xs unzip xtables-addons && \
   curl -L \
