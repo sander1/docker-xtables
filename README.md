@@ -9,4 +9,6 @@ $ docker build --tag=xtables .
 $ docker run --rm -v <path to folder>:/xt_build xtables
 ```
 
+On Ubuntu the default GeoIP data folder is `/usr/share/xt_geoip`.
+
 [1]: https://github.com/mschmitt/GeoLite2xtables
