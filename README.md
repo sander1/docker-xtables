@@ -5,13 +5,13 @@ Docker image based on `alpine:3.8` with xtables-addons installed to build GeoIP 
 A volume `/xt_build` can be used to get the results.
 
 ## Build from source and run
-```bash
+```
 $ docker build --tag=xtables_geoip .
 $ docker run --rm -v <path to folder>:/xt_build xtables_geoip
 ```
 
 ## Pull from Docker Hub and run
-```bash
+```
 $ docker pull sander1/xtables_geoip
 $ docker run --rm -v <path to folder>:/xt_build xtables_geoip
 ```
