@@ -7,13 +7,12 @@ A volume `/xt_build` can be used to get the results.
 ## Build from source and run
 ```
 $ docker build --tag=xtables_geoip .
-$ docker run --rm -v <path to folder>:/xt_build xtables_geoip
+$ docker run --rm -v [path to folder]:/xt_build xtables_geoip
 ```
 
 ## Pull from Docker Hub and run
 ```
-$ docker pull sander1/xtables_geoip
-$ docker run --rm -v <path to folder>:/xt_build xtables_geoip
+$ docker run --rm -v [path to folder]:/xt_build sander1/xtables_geoip
 ```
 
 On Ubuntu the default GeoIP data folder is `/usr/share/xt_geoip`.
