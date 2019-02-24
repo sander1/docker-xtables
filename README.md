@@ -6,6 +6,8 @@ A volume `/xt_build` can be used to get the results.
 
 ## Build from source and run
 ```
+$ git clone https://github.com/sander1/docker-xtables.git
+$ cd docker-xtables
 $ docker build --tag=xtables_geoip .
 $ docker run --rm -v [path to folder]:/xt_build xtables_geoip
 ```
