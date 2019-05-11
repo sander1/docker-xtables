@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.8.4
 
 ARG commit=4e4ab880fc0c884d39b966de7819eb81084752b5
 
