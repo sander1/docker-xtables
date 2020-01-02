@@ -17,15 +17,15 @@ RUN \
   unzip -o \
     /tmp/GeoLite2xtables.zip && \
   mv \
-    ./GeoLite2xtables-${commit} ./GeoLite2xtables && \
+    GeoLite2xtables-${commit} GeoLite2xtables && \
   mkdir \
     /xt_build && \
   rm \
     /tmp/GeoLite2xtables.zip
 
-COPY ./xt_build.sh /opt/GeoLite2xtables
+COPY xt_build.sh download_geolite2.sh /opt/GeoLite2xtables/
 
-RUN chmod +x /opt/GeoLite2xtables/xt_build.sh
+RUN chmod +x /opt/GeoLite2xtables/xt_build.sh /opt/GeoLite2xtables/download_geolite2.sh
 
 VOLUME /xt_build
 
