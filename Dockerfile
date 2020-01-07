@@ -1,6 +1,6 @@
 FROM alpine:3.8.4
 
-ARG commit=4e4ab880fc0c884d39b966de7819eb81084752b5
+ARG commit=329927a6b8d2a4f7581b0493c54fc48bc99ecf79
 
 WORKDIR /opt
 
@@ -13,7 +13,7 @@ RUN \
     bash curl perl perl-doc perl-netaddr-ip perl-text-csv_xs unzip xtables-addons && \
   curl -L \
     -o /tmp/GeoLite2xtables.zip \
-    https://github.com/mschmitt/GeoLite2xtables/archive/${commit}.zip && \
+    https://github.com/sander1/GeoLite2xtables/archive/${commit}.zip && \
   unzip -o \
     /tmp/GeoLite2xtables.zip && \
   mv \
